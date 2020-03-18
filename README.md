@@ -1,6 +1,7 @@
 # job-portal
 A cross platform job portal app built with ionic and Angular.
 
+# Example
 ![background generator](https://i.imgur.com/TWjBghr.png)
 
 ## Project setup
