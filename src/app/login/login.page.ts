@@ -37,31 +37,6 @@ export class LoginPage implements OnInit {
         }
     }
 
-    onLogin(email: string, password: string) {
-        // NOTE Display loading screen overlay
-        this.loadingCtrl
-            .create({ keyboardClose: true, message: 'Logging in...' })
-            .then(loadingEl => {
-                loadingEl.present();
-                // NOTE subscribe to login response.
-                this.authService
-                    .login(email, password)
-                    .pipe(first()) // NOTE explain this to Phil: A pipe takes in data as input and transforms it to a desired output.
-                    .subscribe(
-                        data => {
-                            this.navCtrl.navigateRoot(['/tabs/job-listing'], {
-                                queryParams: { registered: true },
-                            });
-                            loadingEl.dismiss();
-                        },
-                        error => {
-                            this.loginError = error;
-                            loadingEl.dismiss();
-                        }
-                    );
-            });
-    }
-
     onSubmit(form: NgForm) {
         // NOTE stop here if form is invalid
         if (!form.valid) {
@@ -72,5 +47,31 @@ export class LoginPage implements OnInit {
         const password = form.value.password;
         this.onLogin(email, password);
         // form.reset();
+    }
+
+    onLogin(email: string, password: string) {
+        // NOTE Display loading screen overlay
+        this.loadingCtrl
+            .create({ keyboardClose: true, message: 'Logging in...' })
+            .then(loadingEl => {
+                loadingEl.present();
+                this.router.navigate(['/tabs/job-listing']);
+                // NOTE subscribe to login response.
+                // this.authService
+                //     .login(email, password)
+                //     .pipe(first()) // NOTE explain this to Phil: A pipe takes in data as input and transforms it to a desired output.
+                //     .subscribe(
+                //         data => {
+                //             this.navCtrl.navigateRoot(['/tabs/job-listing'], {
+                //                 queryParams: { registered: true },
+                //             });
+                //             loadingEl.dismiss();
+                //         },
+                //         error => {
+                //             this.loginError = error;
+                //             loadingEl.dismiss();
+                //         }
+                //     );
+            });
     }
 }

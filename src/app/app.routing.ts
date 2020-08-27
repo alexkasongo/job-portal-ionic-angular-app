@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { TabsPage } from './tabs/tabs.page';
-import { AuthGuard } from './_helpers/auth.guard';
+// import { AuthGuard } from './_helpers/auth.guard';
 
 const routes: Routes = [
     /**
@@ -35,14 +35,14 @@ const routes: Routes = [
     {
         path: 'job-detail/:jobId',
         loadChildren: './job-detail/job-detail.module#JobDetailPageModule',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
     },
 
     {
         path: 'jobs-applied',
         loadChildren:
             './jobs-applied/jobs-applied.module#JobsAppliedPageModule',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
     },
     /**
      * User Routes
@@ -50,7 +50,7 @@ const routes: Routes = [
     {
         path: 'cv-update/:userId',
         loadChildren: './cv-update/cv-update.module#CvUpdatePageModule',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
     },
     /**
      * CV Routes
@@ -58,7 +58,7 @@ const routes: Routes = [
     {
         path: 'cv-create/:userId',
         loadChildren: './cv-create/cv-create.module#CvCreatePageModule',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
     },
 
     /**
@@ -75,18 +75,18 @@ const routes: Routes = [
                 loadChildren:
                     './job-listing/job-listing.module#JoblistingPageModule',
                 // Enable authentication guard
-                canActivate: [AuthGuard],
+                // canActivate: [AuthGuard],
             },
             {
                 path: 'profile/:userId',
                 loadChildren: './profile/profile.module#ProfilePageModule',
-                canActivate: [AuthGuard],
+                // canActivate: [AuthGuard],
             },
             {
                 path: 'job-bookmarks',
                 loadChildren:
                     './job-bookmarks/job-bookmarks.module#JobBookmarksPageModule',
-                canActivate: [AuthGuard],
+                // canActivate: [AuthGuard],
             },
         ],
     },
