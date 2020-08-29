@@ -73,7 +73,7 @@ export class JoblistingService {
     }
 
     getListing(id: string) {
-        // This is where we get a single place.
+        // This is where we get a single place deom listings
         // return subscribable subject, map(gets what take(gives us))
         return this.http
             .get<JoblistingData>(
