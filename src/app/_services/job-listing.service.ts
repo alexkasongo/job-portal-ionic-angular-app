@@ -25,7 +25,7 @@ interface JoblistingData {
 })
 export class JoblistingService {
     constructor(private http: HttpClient) { }
-    // NOTE  <> descripes generic type and which type of data will eventually endup there
+    // NOTE  <> describes generic type and which type of data will eventually endup there
     // private placesModel: Place[] = new BehaviorSubject<Place[]>()  BEFORE / AFTER is below
     private joblistingModel = new BehaviorSubject<Joblisting[]>([]);
 
