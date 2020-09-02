@@ -42,7 +42,7 @@ export class LoginPage implements OnInit {
         if (!form.valid) {
             return;
         }
-        // NOTE if form valid proceed
+        // NOTE if form is valid proceed
         const email = form.value.email;
         const password = form.value.password;
         this.onLogin(email, password);
