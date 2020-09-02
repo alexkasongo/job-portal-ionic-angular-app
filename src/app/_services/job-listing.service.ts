@@ -40,7 +40,7 @@ export class JoblistingService {
                     `https://textile.incendiaryblue.com/api/listings`
                 )
                 // map() takes the response of the observable and allows us to return new data that will be wrapped in an observable
-                // switchMap returns a new observable, map returns non observable data
+                // switchMap returns a new observable, map returns non observable data.
                 .pipe(
                     map(resData => {
                         const listings = [];
