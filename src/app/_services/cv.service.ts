@@ -31,6 +31,7 @@ export class CvService {
 
     getUserCv(user_id) {
         return this.http
+        // cv interface comes from services
             .get<UserCvInterface>(
                 `https://textile.incendiaryblue.com/api/user/${user_id}/cv`
             )
