@@ -33,7 +33,7 @@
     "angular-leaflet": "0.0.17",
     "core-js": "^2.5.4",
     "leaflet": "^1.6.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.29"
   },
